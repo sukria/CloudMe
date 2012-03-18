@@ -1,7 +1,7 @@
 use Dancer;
 
 get '/' => sub {
-	"Im here";
+    template 'index';
 };
 
 1;
