@@ -12,22 +12,28 @@ my $_STOP_WORDS = [qw(
  trop ici là aujourd
  qu n dans se sa s mes sont y fait il tout toute toutes tous notre votre une veux un ai si
  au plus parce mais son ils sur doit aux comme était nos faut soit même cette
+ cela
  peut serait ceux m avons  tant depuis été me quand alors avait faire ans
  dont celui car sans mêmes mieux toutes années lui veulent aurait ma aucun
  entre deux cinq mon dix afin très sera ainsi chaque non autre autres seront va 
  hui aussi via donc « »
 )];
 
-
 has stop_words => (
     is => 'rw',
     default => sub { $_STOP_WORDS },
 );
 
+sub add_stop_word {
+    my ($self, $word) = @_;
+    push @{$self->stop_words}, lc($word);
+}
+
 has stats => (
     is => 'rw',
     lazy => 1,
     builder => '_build_stats',
+    clearer => 'clear_stats',
 );
 
 has total_words => (
@@ -73,10 +79,9 @@ sub cloud {
     my @top_words = @{ $self->top_words };
     my $total     = $self->total_words;
 
-    my $n = 0;
-    foreach my $word (@top_words) {
+    for (my $n=0; $n<$nb_words; $n++) {
+        my $word = $top_words[$n];
         $cloud->{$word} = $stats->{$word};
-        last if $n++ > $nb_words;
     }
 
     return $cloud;
