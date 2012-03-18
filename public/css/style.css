@@ -8,3 +8,16 @@ body  {
 	background-color: #fff;
 	color: #000;
 }
+
+div.tagcloud {
+	font-weight: bold;
+}
+
+
+div.tagcloud div.row  {
+	margin-bottom: 1em;
+}
+
+div.tagcloud div.row span {
+	padding: 0.2em;
+}

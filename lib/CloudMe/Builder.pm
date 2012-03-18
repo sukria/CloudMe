@@ -9,8 +9,9 @@ has text => (
 my $_STOP_WORDS = [qw(
  à de le la les des de du l d et ou où a pour par ont a sont est elle il nous
  vous tu ne vous c on que qui je pas c'est en ce être leur leurs avec ces ses
- qu n dans se sa s mes sont y fait il tout tous notre votre une veux un ai si
- au j plus parce mais son ils sur doit aux comme était nos faut soit même cette
+ trop ici là aujourd
+ qu n dans se sa s mes sont y fait il tout toute toutes tous notre votre une veux un ai si
+ au plus parce mais son ils sur doit aux comme était nos faut soit même cette
  peut serait ceux m avons  tant depuis été me quand alors avait faire ans
  dont celui car sans mêmes mieux toutes années lui veulent aurait ma aucun
  entre deux cinq mon dix afin très sera ainsi chaque non autre autres seront va 

@@ -7,7 +7,7 @@ Upload a text and you're done!
 <form action="/new" method="post">
 
 	<div>
-	<textarea name="story" cols="120" rows="10"></textarea>
+	<textarea style="width: 100%" name="story" cols="120" rows="10">[% text %]</textarea>
 	</div>
 
 	<div>
@@ -16,14 +16,5 @@ Upload a text and you're done!
 
 </form>
 
-<div>
-[% total %] words 
-</div>
-
-<div>
-[% top_words %]
-</div>
-
-<pre>
 [% cloud %]
-</pre>
+
