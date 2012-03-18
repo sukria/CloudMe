@@ -1,0 +1,29 @@
+<h1>Create a new cloud</h1>
+
+<p>
+Upload a text and you're done!
+</p>
+
+<form action="/new" method="post">
+
+	<div>
+	<textarea name="story" cols="120" rows="10"></textarea>
+	</div>
+
+	<div>
+	<input type="submit" value="CloudMe!" />
+	</div>
+
+</form>
+
+<div>
+[% total %] words 
+</div>
+
+<div>
+[% top_words %]
+</div>
+
+<pre>
+[% cloud %]
+</pre>
