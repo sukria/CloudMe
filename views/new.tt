@@ -4,7 +4,9 @@
 Upload a text and you're done!
 </p>
 
-<form action="/new" method="post">
+<form id="main" action="/new" method="post">
+
+    <input id="ignore_words" type="hidden" name="ignore_words" value="[% ignore_words %]" />
 
 	<div>
 	<textarea style="width: 100%" name="story" cols="120" rows="10">[% text %]</textarea>
@@ -15,6 +17,15 @@ Upload a text and you're done!
 	</div>
 
 </form>
+
+<script type="text/javascript">
+
+function zoom_in_cloud(word) {
+    jQuery('#ignore_words').value = jQuery('#ignore_words').value + ',' + word;
+//    jQuery('#main').submit();
+}
+</script>
+
 
 [% cloud %]
 

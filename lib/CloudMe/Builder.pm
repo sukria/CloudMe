@@ -12,7 +12,7 @@ my $_STOP_WORDS = [qw(
  trop ici là aujourd
  qu n dans se sa s mes sont y fait il tout toute toutes tous notre votre une veux un ai si
  au plus parce mais son ils sur doit aux comme était nos faut soit même cette
- cela
+ cela peu puis cet quelque quelques suis vraiment pis
  peut serait ceux m avons  tant depuis été me quand alors avait faire ans
  dont celui car sans mêmes mieux toutes années lui veulent aurait ma aucun
  entre deux cinq mon dix afin très sera ainsi chaque non autre autres seront va 
@@ -45,8 +45,9 @@ sub _build_stats {
     my ($self) = @_;
     my $stats = { };
     $self->total_words(0);
+    my $text = $self->text;
 
-    for my $w (split /[\/\[\]%\+\-\*\(\),:.;!\?\s’'\r\n]+/, $self->text ) {
+    for my $w (split /[\/\[\]\+\-\*\(\),:.;!\?\s"’'\r\n]+/, $text ) {
         $w = lc $w;
         next if length($w) < 3;
         next if grep /^$w$/, @{ $self->stop_words };
